@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode Companion</title>
+  <link rel="icon" type="image/png" href="icons/icon48.png">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-content">
+      <h1>
+        <span class="logo-icon">⚡</span>
+        LeetCode Companion
+      </h1>
+      <span class="header-badge">v2.0</span>
+    </div>
+  </div>
+
+  <!-- Username Input -->
+  <div class="username-bar">
+    <input
+      type="text"
+      id="username"
+      placeholder="Enter LeetCode username..."
+      autocomplete="off"
+      spellcheck="false"
+    >
+    <button id="saveBtn">Track</button>
+  </div>
+
+  <!-- Tab Navigation -->
+  <div class="tabs">
+    <div class="tab active" data-tab="dashboard">
+      <span class="tab-icon">📊</span>
+      Dashboard
+    </div>
+    <div class="tab" data-tab="solved">
+      <span class="tab-icon">✅</span>
+      Solved
+    </div>
+    <div class="tab" data-tab="contest">
+      <span class="tab-icon">🏆</span>
+      Contest
+    </div>
+    <div class="tab" data-tab="insights">
+      <span class="tab-icon">🧠</span>
+      Insights
+    </div>
+  </div>
+
+  <!-- Dashboard Tab -->
+  <div class="tab-content active" id="tab-dashboard">
+    <div id="dashboard-content">
+      <div class="no-user-prompt" id="no-user-prompt">
+        <div class="prompt-icon">👆</div>
+        <p>Enter your <strong>LeetCode username</strong> above and hit <strong>Track</strong> to get started!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Solved Tab -->
+  <div class="tab-content" id="tab-solved">
+    <div id="solved-content">
+      <div class="no-user-prompt">
+        <div class="prompt-icon">📋</div>
+        <p>Your recently solved problems will appear here.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contest Tab -->
+  <div class="tab-content" id="tab-contest">
+    <div id="contest-content">
+      <div class="no-user-prompt" id="no-contest-prompt">
+        <div class="prompt-icon">🏆</div>
+        <p>Enter your <strong>LeetCode username</strong> above and hit <strong>Track</strong> to see contest stats!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Insights Tab -->
+  <div class="tab-content" id="tab-insights">
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        id="insights-search"
+        placeholder="Search problems or patterns..."
+        autocomplete="off"
+        spellcheck="false"
+      >
+    </div>
+    <div class="insights-list" id="insights-list">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

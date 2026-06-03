@@ -1,0 +1,716 @@
+{
+  "two-sum": {
+    "pattern": "Hash Map",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "Iterate through the array, storing each number's index in a hash map. For each element, check if the complement (target - num) already exists in the map.",
+    "difficulty": "Easy"
+  },
+  "contains-duplicate": {
+    "pattern": "Hash Set",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "Insert each element into a HashSet. If insertion fails (element already exists), a duplicate is found.",
+    "difficulty": "Easy"
+  },
+  "valid-anagram": {
+    "pattern": "Hash Map / Sorting",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Count character frequencies using an array of size 26. Compare frequency arrays for both strings.",
+    "difficulty": "Easy"
+  },
+  "group-anagrams": {
+    "pattern": "Hash Map + Sorting",
+    "time": "O(n·k log k)",
+    "space": "O(n·k)",
+    "approach": "Sort each string to create a canonical key and group strings with the same key using a hash map.",
+    "difficulty": "Medium"
+  },
+  "top-k-frequent-elements": {
+    "pattern": "Bucket Sort / Heap",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "Count frequencies with a hash map, then use bucket sort where index = frequency to get top-k in O(n).",
+    "difficulty": "Medium"
+  },
+  "product-of-array-except-self": {
+    "pattern": "Prefix / Suffix Products",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Build prefix products left-to-right in the output array, then multiply suffix products right-to-left in a second pass.",
+    "difficulty": "Medium"
+  },
+  "valid-sudoku": {
+    "pattern": "Hash Set",
+    "time": "O(81)",
+    "space": "O(81)",
+    "approach": "Use hash sets to track seen numbers in each row, column, and 3×3 box. Return false on any duplicate.",
+    "difficulty": "Medium"
+  },
+  "longest-consecutive-sequence": {
+    "pattern": "Hash Set",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "Add all numbers to a set. For each number that is the start of a sequence (num-1 not in set), count consecutive elements.",
+    "difficulty": "Medium"
+  },
+  "best-time-to-buy-and-sell-stock": {
+    "pattern": "Greedy / Kadane's",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Track the minimum price seen so far. At each step, compute profit = price - minPrice and update maxProfit.",
+    "difficulty": "Easy"
+  },
+  "valid-parentheses": {
+    "pattern": "Stack",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "Push opening brackets onto a stack. For closing brackets, check the top matches. Stack must be empty at the end.",
+    "difficulty": "Easy"
+  },
+  "min-stack": {
+    "pattern": "Two Stacks",
+    "time": "O(1) per op",
+    "space": "O(n)",
+    "approach": "Maintain a secondary stack tracking the current minimum. Push to min stack when the new value ≤ current min.",
+    "difficulty": "Medium"
+  },
+  "evaluate-reverse-polish-notation": {
+    "pattern": "Stack",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "Push numbers onto a stack. When an operator is encountered, pop two operands, apply the operator, push the result.",
+    "difficulty": "Medium"
+  },
+  "generate-parentheses": {
+    "pattern": "Backtracking",
+    "time": "O(4ⁿ/√n)",
+    "space": "O(n)",
+    "approach": "Recursively build strings by adding '(' if open < n, and ')' if close < open. Base case: length == 2n.",
+    "difficulty": "Medium"
+  },
+  "daily-temperatures": {
+    "pattern": "Monotonic Stack",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "Use a decreasing monotonic stack of indices. Pop elements when a warmer temperature is found and compute differences.",
+    "difficulty": "Medium"
+  },
+  "car-fleet": {
+    "pattern": "Stack / Sorting",
+    "time": "O(n log n)",
+    "space": "O(n)",
+    "approach": "Sort cars by position descending. Calculate arrival times; a car forms a new fleet if it arrives later than the current fleet leader.",
+    "difficulty": "Medium"
+  },
+  "largest-rectangle-in-histogram": {
+    "pattern": "Monotonic Stack",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "Use an increasing stack of indices. When a shorter bar is found, pop and calculate area using the popped height and width span.",
+    "difficulty": "Hard"
+  },
+  "binary-search": {
+    "pattern": "Binary Search",
+    "time": "O(log n)",
+    "space": "O(1)",
+    "approach": "Maintain left and right pointers. Compare mid element to target; halve the search space each iteration.",
+    "difficulty": "Easy"
+  },
+  "search-a-2d-matrix": {
+    "pattern": "Binary Search",
+    "time": "O(log(m·n))",
+    "space": "O(1)",
+    "approach": "Treat the 2D matrix as a flattened sorted array. Apply standard binary search, converting 1D index to 2D coordinates.",
+    "difficulty": "Medium"
+  },
+  "koko-eating-bananas": {
+    "pattern": "Binary Search on Answer",
+    "time": "O(n log m)",
+    "space": "O(1)",
+    "approach": "Binary search on eating speed k. For each k, check if Koko can finish all piles within h hours. Minimize k.",
+    "difficulty": "Medium"
+  },
+  "find-minimum-in-rotated-sorted-array": {
+    "pattern": "Binary Search",
+    "time": "O(log n)",
+    "space": "O(1)",
+    "approach": "Binary search comparing mid to right. If mid > right, minimum is in the right half; otherwise it's in the left half.",
+    "difficulty": "Medium"
+  },
+  "search-in-rotated-sorted-array": {
+    "pattern": "Binary Search",
+    "time": "O(log n)",
+    "space": "O(1)",
+    "approach": "Determine which half is sorted. If target is in the sorted half, search there; otherwise search the other half.",
+    "difficulty": "Medium"
+  },
+  "valid-palindrome": {
+    "pattern": "Two Pointers",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Use left and right pointers, skip non-alphanumeric chars, compare characters case-insensitively moving inward.",
+    "difficulty": "Easy"
+  },
+  "two-sum-ii-input-array-is-sorted": {
+    "pattern": "Two Pointers",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Left and right pointers. If sum < target, move left forward; if sum > target, move right backward.",
+    "difficulty": "Medium"
+  },
+  "3sum": {
+    "pattern": "Two Pointers + Sorting",
+    "time": "O(n²)",
+    "space": "O(1)",
+    "approach": "Sort the array. Fix one element, then use two pointers on the remaining subarray to find pairs summing to -fixed.",
+    "difficulty": "Medium"
+  },
+  "container-with-most-water": {
+    "pattern": "Two Pointers",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Start with widest container (left=0, right=n-1). Move the shorter pointer inward to potentially find a taller line.",
+    "difficulty": "Medium"
+  },
+  "trapping-rain-water": {
+    "pattern": "Two Pointers",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Track leftMax and rightMax. Move the pointer with the smaller max inward, accumulating water = max - height at each step.",
+    "difficulty": "Hard"
+  },
+  "best-time-to-buy-and-sell-stock-ii": {
+    "pattern": "Greedy",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Add every positive price difference (prices[i] - prices[i-1]) since we can make unlimited transactions.",
+    "difficulty": "Medium"
+  },
+  "longest-substring-without-repeating-characters": {
+    "pattern": "Sliding Window + Hash Set",
+    "time": "O(n)",
+    "space": "O(min(n, m))",
+    "approach": "Expand right pointer, add char to set. If duplicate, shrink from left until no duplicate. Track max window size.",
+    "difficulty": "Medium"
+  },
+  "longest-repeating-character-replacement": {
+    "pattern": "Sliding Window",
+    "time": "O(n)",
+    "space": "O(26)",
+    "approach": "Track character frequencies in window. If windowSize - maxFreq > k, shrink from left. Track max window size.",
+    "difficulty": "Medium"
+  },
+  "permutation-in-string": {
+    "pattern": "Sliding Window + Frequency",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Use a fixed-size window equal to s1's length. Compare character frequency arrays of window and s1.",
+    "difficulty": "Medium"
+  },
+  "minimum-window-substring": {
+    "pattern": "Sliding Window + Hash Map",
+    "time": "O(n)",
+    "space": "O(m)",
+    "approach": "Expand right to include all chars of t. Once valid, shrink from left to minimize. Track the smallest valid window.",
+    "difficulty": "Hard"
+  },
+  "reverse-linked-list": {
+    "pattern": "Iterative / Recursive",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Maintain prev, curr, next pointers. Reverse each link by pointing curr.next to prev, then advance all three.",
+    "difficulty": "Easy"
+  },
+  "merge-two-sorted-lists": {
+    "pattern": "Two Pointers",
+    "time": "O(n + m)",
+    "space": "O(1)",
+    "approach": "Use a dummy head. Compare nodes from both lists, append the smaller one, advance that pointer. Append remaining.",
+    "difficulty": "Easy"
+  },
+  "linked-list-cycle": {
+    "pattern": "Floyd's Tortoise & Hare",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Use slow (1 step) and fast (2 steps) pointers. If they meet, there's a cycle. If fast reaches null, no cycle.",
+    "difficulty": "Easy"
+  },
+  "reorder-list": {
+    "pattern": "Fast/Slow + Reverse + Merge",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Find mid with slow/fast pointers. Reverse the second half. Interleave-merge both halves.",
+    "difficulty": "Medium"
+  },
+  "remove-nth-node-from-end-of-list": {
+    "pattern": "Two Pointers",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Advance fast pointer n steps ahead. Then move both until fast reaches end. Slow is at the node before target.",
+    "difficulty": "Medium"
+  },
+  "copy-list-with-random-pointer": {
+    "pattern": "Hash Map",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "First pass: create a map of original → copy nodes. Second pass: set next and random pointers using the map.",
+    "difficulty": "Medium"
+  },
+  "lru-cache": {
+    "pattern": "Hash Map + Doubly Linked List",
+    "time": "O(1) per op",
+    "space": "O(capacity)",
+    "approach": "Hash map for O(1) lookup, doubly linked list for O(1) insert/remove. Move accessed nodes to head; evict from tail.",
+    "difficulty": "Medium"
+  },
+  "merge-k-sorted-lists": {
+    "pattern": "Min Heap / Divide & Conquer",
+    "time": "O(n log k)",
+    "space": "O(k)",
+    "approach": "Push head of each list into a min-heap. Pop smallest, append to result, push its next node. Repeat until heap empty.",
+    "difficulty": "Hard"
+  },
+  "invert-binary-tree": {
+    "pattern": "DFS / Recursion",
+    "time": "O(n)",
+    "space": "O(h)",
+    "approach": "Recursively swap left and right children of every node. Base case: null node.",
+    "difficulty": "Easy"
+  },
+  "maximum-depth-of-binary-tree": {
+    "pattern": "DFS / Recursion",
+    "time": "O(n)",
+    "space": "O(h)",
+    "approach": "Return 1 + max(depth(left), depth(right)). Base case: null returns 0.",
+    "difficulty": "Easy"
+  },
+  "same-tree": {
+    "pattern": "DFS / Recursion",
+    "time": "O(n)",
+    "space": "O(h)",
+    "approach": "Recursively check if both nodes have the same value and their left/right subtrees are identical.",
+    "difficulty": "Easy"
+  },
+  "subtree-of-another-tree": {
+    "pattern": "DFS + isSameTree",
+    "time": "O(m·n)",
+    "space": "O(h)",
+    "approach": "For each node in the main tree, check if the subtree rooted there is identical to the target tree.",
+    "difficulty": "Easy"
+  },
+  "lowest-common-ancestor-of-a-binary-search-tree": {
+    "pattern": "BST Property",
+    "time": "O(h)",
+    "space": "O(1)",
+    "approach": "If both values < node, go left. If both > node, go right. Otherwise, current node is the LCA.",
+    "difficulty": "Medium"
+  },
+  "binary-tree-level-order-traversal": {
+    "pattern": "BFS / Queue",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "Use a queue. Process all nodes at current level (queue size), add their children. Collect each level's values.",
+    "difficulty": "Medium"
+  },
+  "validate-binary-search-tree": {
+    "pattern": "DFS with Range",
+    "time": "O(n)",
+    "space": "O(h)",
+    "approach": "Pass min/max bounds recursively. Each node's value must be within (min, max). Update bounds at each level.",
+    "difficulty": "Medium"
+  },
+  "kth-smallest-element-in-a-bst": {
+    "pattern": "Inorder Traversal",
+    "time": "O(h + k)",
+    "space": "O(h)",
+    "approach": "Inorder traversal visits BST nodes in sorted order. Count nodes visited; return when count == k.",
+    "difficulty": "Medium"
+  },
+  "construct-binary-tree-from-preorder-and-inorder-traversal": {
+    "pattern": "Recursion + Hash Map",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "First preorder element is root. Find root in inorder to split left/right subtrees. Recurse on each half.",
+    "difficulty": "Medium"
+  },
+  "binary-tree-maximum-path-sum": {
+    "pattern": "DFS / Post-order",
+    "time": "O(n)",
+    "space": "O(h)",
+    "approach": "At each node, compute max single-path sum (node + max(left, right, 0)). Update global max with node+left+right.",
+    "difficulty": "Hard"
+  },
+  "serialize-and-deserialize-binary-tree": {
+    "pattern": "BFS / DFS + String",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "Preorder traversal with null markers for serialization. Deserialize by consuming tokens sequentially.",
+    "difficulty": "Hard"
+  },
+  "implement-trie-prefix-tree": {
+    "pattern": "Trie",
+    "time": "O(m) per op",
+    "space": "O(n·m)",
+    "approach": "Each node has a children map (26 chars) and isEnd flag. Insert/search by traversing character by character.",
+    "difficulty": "Medium"
+  },
+  "word-search": {
+    "pattern": "Backtracking / DFS",
+    "time": "O(m·n·4^L)",
+    "space": "O(L)",
+    "approach": "From each cell, DFS in 4 directions matching word characters. Mark visited cells to avoid reuse; backtrack on failure.",
+    "difficulty": "Medium"
+  },
+  "word-search-ii": {
+    "pattern": "Trie + Backtracking",
+    "time": "O(m·n·4^L)",
+    "space": "O(total chars)",
+    "approach": "Build a trie from all words. DFS from each cell guided by trie nodes. Prune branches with no trie children.",
+    "difficulty": "Hard"
+  },
+  "number-of-islands": {
+    "pattern": "BFS / DFS / Union-Find",
+    "time": "O(m·n)",
+    "space": "O(m·n)",
+    "approach": "Iterate grid. On finding '1', increment count and flood-fill (DFS/BFS) to mark all connected land as visited.",
+    "difficulty": "Medium"
+  },
+  "clone-graph": {
+    "pattern": "BFS / DFS + Hash Map",
+    "time": "O(V + E)",
+    "space": "O(V)",
+    "approach": "Use a hash map of original → clone. BFS/DFS traverse the graph, cloning nodes and connecting neighbors.",
+    "difficulty": "Medium"
+  },
+  "pacific-atlantic-water-flow": {
+    "pattern": "Multi-source BFS/DFS",
+    "time": "O(m·n)",
+    "space": "O(m·n)",
+    "approach": "BFS/DFS from Pacific edges and Atlantic edges separately. Answer = cells reachable from both oceans.",
+    "difficulty": "Medium"
+  },
+  "course-schedule": {
+    "pattern": "Topological Sort / DFS",
+    "time": "O(V + E)",
+    "space": "O(V + E)",
+    "approach": "Build adjacency list. Detect cycle using DFS with 3 states (unvisited, visiting, visited). No cycle → possible.",
+    "difficulty": "Medium"
+  },
+  "course-schedule-ii": {
+    "pattern": "Topological Sort / BFS",
+    "time": "O(V + E)",
+    "space": "O(V + E)",
+    "approach": "Use Kahn's algorithm: process nodes with in-degree 0. Add to result, decrement neighbors' in-degrees. Repeat.",
+    "difficulty": "Medium"
+  },
+  "rotting-oranges": {
+    "pattern": "Multi-source BFS",
+    "time": "O(m·n)",
+    "space": "O(m·n)",
+    "approach": "Add all rotten oranges to queue. BFS level by level (each level = 1 minute). Count minutes until no fresh oranges remain.",
+    "difficulty": "Medium"
+  },
+  "climbing-stairs": {
+    "pattern": "Dynamic Programming",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "dp[i] = dp[i-1] + dp[i-2]. Only need two previous values, so use two variables instead of an array.",
+    "difficulty": "Easy"
+  },
+  "min-cost-climbing-stairs": {
+    "pattern": "Dynamic Programming",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "dp[i] = cost[i] + min(dp[i-1], dp[i-2]). Optimize space with two variables.",
+    "difficulty": "Easy"
+  },
+  "house-robber": {
+    "pattern": "Dynamic Programming",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "dp[i] = max(dp[i-1], dp[i-2] + nums[i]). Can't rob adjacent houses. Track two previous values.",
+    "difficulty": "Medium"
+  },
+  "house-robber-ii": {
+    "pattern": "Dynamic Programming (Circular)",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Run House Robber twice: once on nums[0..n-2], once on nums[1..n-1]. Take the max of both results.",
+    "difficulty": "Medium"
+  },
+  "longest-palindromic-substring": {
+    "pattern": "Expand Around Center",
+    "time": "O(n²)",
+    "space": "O(1)",
+    "approach": "For each index, expand outward for both odd and even length palindromes. Track the longest found.",
+    "difficulty": "Medium"
+  },
+  "palindromic-substrings": {
+    "pattern": "Expand Around Center",
+    "time": "O(n²)",
+    "space": "O(1)",
+    "approach": "For each center (2n-1 centers), expand while chars match. Count each valid expansion as a palindromic substring.",
+    "difficulty": "Medium"
+  },
+  "decode-ways": {
+    "pattern": "Dynamic Programming",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "dp[i] = dp[i-1] (if valid single digit) + dp[i-2] (if valid two-digit 10-26). Handle '0' as special case.",
+    "difficulty": "Medium"
+  },
+  "coin-change": {
+    "pattern": "Dynamic Programming (Bottom-up)",
+    "time": "O(n·amount)",
+    "space": "O(amount)",
+    "approach": "dp[i] = min coins to make amount i. For each coin, dp[i] = min(dp[i], dp[i-coin] + 1). Init dp[0]=0.",
+    "difficulty": "Medium"
+  },
+  "maximum-product-subarray": {
+    "pattern": "Dynamic Programming",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Track both max and min products ending at current position (negatives can flip). Update global max each step.",
+    "difficulty": "Medium"
+  },
+  "word-break": {
+    "pattern": "Dynamic Programming",
+    "time": "O(n²·m)",
+    "space": "O(n)",
+    "approach": "dp[i] = true if s[0..i) can be segmented. For each i, check all j < i: dp[j] && s[j..i) in wordDict.",
+    "difficulty": "Medium"
+  },
+  "longest-increasing-subsequence": {
+    "pattern": "DP + Binary Search",
+    "time": "O(n log n)",
+    "space": "O(n)",
+    "approach": "Maintain a tails array. For each num, binary search for its position. Replace or extend the tails array.",
+    "difficulty": "Medium"
+  },
+  "unique-paths": {
+    "pattern": "Dynamic Programming (2D)",
+    "time": "O(m·n)",
+    "space": "O(n)",
+    "approach": "dp[i][j] = dp[i-1][j] + dp[i][j-1]. First row and column are all 1s. Can optimize to 1D array.",
+    "difficulty": "Medium"
+  },
+  "longest-common-subsequence": {
+    "pattern": "Dynamic Programming (2D)",
+    "time": "O(m·n)",
+    "space": "O(m·n)",
+    "approach": "If chars match, dp[i][j] = dp[i-1][j-1]+1. Otherwise, dp[i][j] = max(dp[i-1][j], dp[i][j-1]).",
+    "difficulty": "Medium"
+  },
+  "maximum-subarray": {
+    "pattern": "Kadane's Algorithm",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Track current sum; reset to current element if sum becomes negative. Update global max at each step.",
+    "difficulty": "Medium"
+  },
+  "jump-game": {
+    "pattern": "Greedy",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Track the farthest reachable index. At each step, update farthest = max(farthest, i + nums[i]). Fail if i > farthest.",
+    "difficulty": "Medium"
+  },
+  "merge-intervals": {
+    "pattern": "Sorting + Greedy",
+    "time": "O(n log n)",
+    "space": "O(n)",
+    "approach": "Sort by start time. Iterate and merge overlapping intervals (current.start ≤ prev.end). Extend end if needed.",
+    "difficulty": "Medium"
+  },
+  "insert-interval": {
+    "pattern": "Interval Merge",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "Add all intervals before new. Merge overlapping ones with new interval. Add all intervals after. Three phases.",
+    "difficulty": "Medium"
+  },
+  "non-overlapping-intervals": {
+    "pattern": "Greedy + Sorting",
+    "time": "O(n log n)",
+    "space": "O(1)",
+    "approach": "Sort by end time. Greedily keep intervals that don't overlap with the last kept interval. Count removals.",
+    "difficulty": "Medium"
+  },
+  "meeting-rooms-ii": {
+    "pattern": "Min Heap / Sweep Line",
+    "time": "O(n log n)",
+    "space": "O(n)",
+    "approach": "Sort by start time. Use a min-heap of end times. If earliest end ≤ current start, reuse room. Else add new room.",
+    "difficulty": "Medium"
+  },
+  "rotate-image": {
+    "pattern": "Matrix Manipulation",
+    "time": "O(n²)",
+    "space": "O(1)",
+    "approach": "Transpose the matrix (swap [i][j] with [j][i]), then reverse each row. This rotates 90° clockwise in-place.",
+    "difficulty": "Medium"
+  },
+  "spiral-matrix": {
+    "pattern": "Simulation / Boundaries",
+    "time": "O(m·n)",
+    "space": "O(1)",
+    "approach": "Maintain top, bottom, left, right boundaries. Traverse right→down→left→up, shrinking boundaries after each direction.",
+    "difficulty": "Medium"
+  },
+  "set-matrix-zeroes": {
+    "pattern": "In-place Marking",
+    "time": "O(m·n)",
+    "space": "O(1)",
+    "approach": "Use first row and first column as markers. Scan matrix, mark rows/cols to zero. Then zero out using markers.",
+    "difficulty": "Medium"
+  },
+  "kth-largest-element-in-an-array": {
+    "pattern": "Quickselect / Min Heap",
+    "time": "O(n) avg",
+    "space": "O(1)",
+    "approach": "Use Quickselect (partition-based). Partition around a pivot; recurse on the half containing the k-th element.",
+    "difficulty": "Medium"
+  },
+  "find-median-from-data-stream": {
+    "pattern": "Two Heaps",
+    "time": "O(log n) per add",
+    "space": "O(n)",
+    "approach": "Maintain a max-heap (lower half) and min-heap (upper half). Balance sizes after each insert. Median from heap tops.",
+    "difficulty": "Hard"
+  },
+  "design-twitter": {
+    "pattern": "Hash Map + Heap + OOP",
+    "time": "O(n log k)",
+    "space": "O(n)",
+    "approach": "Hash maps for follows and tweets. Merge-k-sorted approach using a heap for the news feed of followed users.",
+    "difficulty": "Medium"
+  },
+  "task-scheduler": {
+    "pattern": "Greedy + Max Heap",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Count frequencies. Slots = (maxFreq-1)*(n+1) + count_of_max_freq_tasks. Answer = max(slots, total tasks).",
+    "difficulty": "Medium"
+  },
+  "combination-sum": {
+    "pattern": "Backtracking",
+    "time": "O(n^(T/M))",
+    "space": "O(T/M)",
+    "approach": "Sort candidates. Backtrack: add current candidate (can reuse), recurse with remaining target. Skip if exceeds target.",
+    "difficulty": "Medium"
+  },
+  "subsets": {
+    "pattern": "Backtracking / Bit Manipulation",
+    "time": "O(n·2ⁿ)",
+    "space": "O(n)",
+    "approach": "For each element, choose to include or exclude it. Recursively build all 2ⁿ subsets.",
+    "difficulty": "Medium"
+  },
+  "permutations": {
+    "pattern": "Backtracking",
+    "time": "O(n·n!)",
+    "space": "O(n)",
+    "approach": "Swap each element to the current position, recurse on the remaining. Use a visited set or swap-based approach.",
+    "difficulty": "Medium"
+  },
+  "letter-combinations-of-a-phone-number": {
+    "pattern": "Backtracking",
+    "time": "O(4ⁿ)",
+    "space": "O(n)",
+    "approach": "Map digits to letters. For each digit, try all mapped letters and recurse to the next digit.",
+    "difficulty": "Medium"
+  },
+  "n-queens": {
+    "pattern": "Backtracking",
+    "time": "O(n!)",
+    "space": "O(n²)",
+    "approach": "Place queens row by row. Track columns and diagonals with sets. Backtrack when no valid column exists.",
+    "difficulty": "Hard"
+  },
+  "number-of-1-bits": {
+    "pattern": "Bit Manipulation",
+    "time": "O(32)",
+    "space": "O(1)",
+    "approach": "Count set bits using n & (n-1) which clears the lowest set bit. Count iterations until n becomes 0.",
+    "difficulty": "Easy"
+  },
+  "counting-bits": {
+    "pattern": "DP + Bit Manipulation",
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach": "dp[i] = dp[i >> 1] + (i & 1). Each number's bit count = right-shifted value's count + last bit.",
+    "difficulty": "Easy"
+  },
+  "reverse-bits": {
+    "pattern": "Bit Manipulation",
+    "time": "O(32)",
+    "space": "O(1)",
+    "approach": "Iterate 32 times. Shift result left, add last bit of n (n & 1), shift n right.",
+    "difficulty": "Easy"
+  },
+  "missing-number": {
+    "pattern": "Math / XOR",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "XOR all indices (0..n) with all array elements. Duplicate values cancel out, leaving the missing number.",
+    "difficulty": "Easy"
+  },
+  "sum-of-two-integers": {
+    "pattern": "Bit Manipulation",
+    "time": "O(32)",
+    "space": "O(1)",
+    "approach": "XOR gives sum without carry. AND + left shift gives carry. Repeat until carry is 0.",
+    "difficulty": "Medium"
+  },
+  "reverse-integer": {
+    "pattern": "Math",
+    "time": "O(log n)",
+    "space": "O(1)",
+    "approach": "Extract last digit with % 10, build reversed number. Check overflow before multiplying by 10.",
+    "difficulty": "Medium"
+  },
+  "happy-number": {
+    "pattern": "Floyd's Cycle Detection",
+    "time": "O(log n)",
+    "space": "O(1)",
+    "approach": "Compute sum of squared digits. Use slow/fast pointers to detect cycles. If it reaches 1, it's happy.",
+    "difficulty": "Easy"
+  },
+  "plus-one": {
+    "pattern": "Math / Array",
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach": "Start from the last digit. If digit < 9, increment and return. If 9, set to 0 and carry. Handle all-9s case.",
+    "difficulty": "Easy"
+  },
+  "pow-x-n": {
+    "pattern": "Fast Power / Recursion",
+    "time": "O(log n)",
+    "space": "O(log n)",
+    "approach": "If n is even: x^n = (x^(n/2))^2. If n is odd: x^n = x * x^(n-1). Handle negative n by inverting x.",
+    "difficulty": "Medium"
+  },
+  "median-of-two-sorted-arrays": {
+    "pattern": "Binary Search",
+    "time": "O(log(min(m,n)))",
+    "space": "O(1)",
+    "approach": "Binary search on the shorter array's partition point. Ensure left halves ≤ right halves across both arrays.",
+    "difficulty": "Hard"
+  },
+  "edit-distance": {
+    "pattern": "Dynamic Programming (2D)",
+    "time": "O(m·n)",
+    "space": "O(m·n)",
+    "approach": "dp[i][j] = min operations to convert word1[0..i) to word2[0..j). Three operations: insert, delete, replace.",
+    "difficulty": "Medium"
+  },
+  "regular-expression-matching": {
+    "pattern": "Dynamic Programming (2D)",
+    "time": "O(m·n)",
+    "space": "O(m·n)",
+    "approach": "dp[i][j] = does s[0..i) match p[0..j). Handle '.' (any char) and '*' (zero or more of preceding char).",
+    "difficulty": "Hard"
+  }
+}
