@@ -595,7 +595,11 @@ function renderInsights(data) {
       <div class="insight-item" data-slug="${slug}">
         <div class="insight-header">
           <div class="insight-difficulty-dot ${diff}"></div>
-          <div class="insight-name">${name}</div>
+          <div class="insight-name">
+            <a href="https://leetcode.com/problems/${slug}/" target="_blank" rel="noopener" class="insight-question-link" title="Open problem in LeetCode" style="color: inherit; text-decoration: none;">
+              ${name} <span style="opacity: 0.6; font-size: 0.8em; margin-left: 4px;">↗</span>
+            </a>
+          </div>
           <span class="insight-pattern-badge">${item.pattern}</span>
         </div>
         <div class="insight-details">
@@ -620,7 +624,8 @@ function renderInsights(data) {
 
   // Expand/collapse click handlers
   insightsList.querySelectorAll(".insight-item").forEach(el => {
-    el.addEventListener("click", () => {
+    el.addEventListener("click", (e) => {
+      if (e.target.closest(".insight-question-link")) return;
       el.classList.toggle("expanded");
     });
   });
